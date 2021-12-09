@@ -1,0 +1,174 @@
+{
+    "sourceFile": "src/App.js",
+    "activeCommit": 0,
+    "commits": [
+        {
+            "activePatchIndex": 39,
+            "patches": [
+                {
+                    "date": 1639017418016,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n"
+                },
+                {
+                    "date": 1639017427390,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,9 +1,8 @@\n function App() {\n   return (\n     <div className=\"App\">\n       <h1>Olá mundo</h1>\n-      </header>\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1639017622847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n function App() {\n   return (\n-    <div className=\"App\">\n-      <h1>Olá mundo</h1>\n+    <div className=\"container\">\n+      <h1 className=\"title\">Buscador CEP</h1>\n+\n+      <div className=\"containerInput\">\n+        <input type=\"text\" placeholder=\"Digite seu cep...\" />\n+      </div>\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1639017634536,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -4,8 +4,9 @@\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n         <input type=\"text\" placeholder=\"Digite seu cep...\" />\n+        <h2>Olá</h2>\n       </div>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1639020403796,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,12 +1,18 @@\n+import {FiSearch} from 'react-icons/fi';\n+\n function App() {\n   return (\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n         <input type=\"text\" placeholder=\"Digite seu cep...\" />\n-        <h2>Olá</h2>\n+        <FiSearch />\n+    <button className=\"buttonSearch\">\n+\n+    </button>\n+\n       </div>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1639020442452,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,13 +6,12 @@\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n         <input type=\"text\" placeholder=\"Digite seu cep...\" />\n-        <FiSearch />\n-    <button className=\"buttonSearch\">\n-\n-    </button>\n-\n+        \n+        <button className=\"buttonSearch\">\n+          <FiSearch />\n+        </button>\n       </div>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1639020460391,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -8,9 +8,9 @@\n       <div className=\"containerInput\">\n         <input type=\"text\" placeholder=\"Digite seu cep...\" />\n         \n         <button className=\"buttonSearch\">\n-          <FiSearch />\n+          <FiSearch size={25} color=\"#fff\" />\n         </button>\n       </div>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1639020586519,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -11,8 +11,17 @@\n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n       </div>\n+\n+      <main className=\"main\">\n+        <h2>CEP: 57200000</h2>\n+\n+        <span>Rua Ipê Roxo</span>\n+        <span>Complemento: Muro cor de açaí</span>\n+        <span>Raimundo Marinho</span>\n+        <span>Penedo - AL</span>\n+      </main>\n     </div>\n   );\n }\n \n"
+                },
+                {
+                    "date": 1639020643039,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,5 +1,6 @@\n import {FiSearch} from 'react-icons/fi';\n+import './styles.css';\n \n function App() {\n   return (\n     <div className=\"container\">\n"
+                },
+                {
+                    "date": 1639021340080,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,8 +1,12 @@\n+import {useState} from 'react';\n import {FiSearch} from 'react-icons/fi';\n import './styles.css';\n \n function App() {\n+\n+  const [input, setInput] = useState('Testando');\n+\n   return (\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n"
+                },
+                {
+                    "date": 1639021379701,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n-        <input type=\"text\" placeholder=\"Digite seu cep...\" />\n+        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={setInput} />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n@@ -24,8 +24,9 @@\n         <span>Rua Ipê Roxo</span>\n         <span>Complemento: Muro cor de açaí</span>\n         <span>Raimundo Marinho</span>\n         <span>Penedo - AL</span>\n+        <span>{input}</span>\n       </main>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1639021412214,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n-        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={setInput} />\n+        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={()=>setInput} />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n"
+                },
+                {
+                    "date": 1639021430544,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n-        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={()=>setInput} />\n+        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={()=>setInput()} />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n"
+                },
+                {
+                    "date": 1639021482472,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n-        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={()=>setInput()} />\n+        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={response=>setInput()} />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n"
+                },
+                {
+                    "date": 1639021498466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n-        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={response=>setInput()} />\n+        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={(response)=>setInput()} />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n"
+                },
+                {
+                    "date": 1639021557396,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n-        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={(response)=>setInput()} />\n+        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={(response)=>setInput(input)} />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n"
+                },
+                {
+                    "date": 1639021571331,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n-        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={(response)=>setInput(input)} />\n+        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={()=>setInput(input)} />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n"
+                },
+                {
+                    "date": 1639021591371,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n-        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={()=>setInput(input)} />\n+        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={()=>setInput()} />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n"
+                },
+                {
+                    "date": 1639021601573,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n-        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={()=>setInput()} />\n+        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={()=>this.setInput()} />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n"
+                },
+                {
+                    "date": 1639021609860,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n-        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={()=>this.setInput()} />\n+        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={()=>.setInput()} />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n"
+                },
+                {
+                    "date": 1639021662443,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n-        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={()=>.setInput()} />\n+        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={(e)=>setInput()} />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n"
+                },
+                {
+                    "date": 1639021678945,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,9 @@\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n-        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={(e)=>setInput()} />\n+        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={(e)=>setInput(e.target)} />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n"
+                },
+                {
+                    "date": 1639021703217,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -10,9 +10,13 @@\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n       <div className=\"containerInput\">\n-        <input type=\"text\" placeholder=\"Digite seu cep...\" onChange={(e)=>setInput(e.target)} />\n+        <input \n+          type=\"text\" \n+          placeholder=\"Digite seu cep...\" \n+          value={input}\n+          onChange={(e)=>setInput(e.target.value)} />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n"
+                },
+                {
+                    "date": 1639021724757,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -14,9 +14,10 @@\n         <input \n           type=\"text\" \n           placeholder=\"Digite seu cep...\" \n           value={input}\n-          onChange={(e)=>setInput(e.target.value)} />\n+          onChange={(e)=>setInput(e.target.value)} \n+        />\n         \n         <button className=\"buttonSearch\">\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n"
+                },
+                {
+                    "date": 1639021801514,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -5,8 +5,12 @@\n function App() {\n \n   const [input, setInput] = useState('Testando');\n \n+  const handleSearch = () => {\n+    alert(\"OI\");\n+  }\n+\n   return (\n     <div className=\"container\">\n       <h1 className=\"title\">Buscador CEP</h1>\n \n@@ -17,9 +21,9 @@\n           value={input}\n           onChange={(e)=>setInput(e.target.value)} \n         />\n         \n-        <button className=\"buttonSearch\">\n+        <button className=\"buttonSearch\" onClick={handleSearch}>\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n       </div>\n \n"
+                },
+                {
+                    "date": 1639021817142,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -3,9 +3,9 @@\n import './styles.css';\n \n function App() {\n \n-  const [input, setInput] = useState('Testando');\n+  const [input, setInput] = useState('');\n \n   const handleSearch = () => {\n     alert(\"OI\");\n   }\n"
+                },
+                {
+                    "date": 1639021832412,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \n   const [input, setInput] = useState('');\n \n   const handleSearch = () => {\n-    alert(\"OI\");\n+    alert(\"Valor do input\"+input);\n   }\n \n   return (\n     <div className=\"container\">\n"
+                },
+                {
+                    "date": 1639021843827,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \n   const [input, setInput] = useState('');\n \n   const handleSearch = () => {\n-    alert(\"Valor do input\"+input);\n+    alert(\"Valor do input: \"+input);\n   }\n \n   return (\n     <div className=\"container\">\n"
+                },
+                {
+                    "date": 1639021859904,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,9 +6,9 @@\n \n   const [input, setInput] = useState('');\n \n   const handleSearch = () => {\n-    alert(\"Valor do input: \"+input);\n+    alert(\"Valor do input: \\n\"+input);\n   }\n \n   return (\n     <div className=\"container\">\n"
+                },
+                {
+                    "date": 1639022412764,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -1,14 +1,28 @@\n import {useState} from 'react';\n import {FiSearch} from 'react-icons/fi';\n import './styles.css';\n \n+import api from './services/api';\n+\n function App() {\n \n   const [input, setInput] = useState('');\n \n-  const handleSearch = () => {\n-    alert(\"Valor do input: \\n\"+input);\n+  async function handleSearch(){\n+    if(input === \"\" ){\n+      alert(\"Preencha algum CEP!\");\n+      return;\n+    }\n+\n+    try{\n+      const response = await api.get(`${input}/json`);\n+      console.log(response);\n+    } \n+\n+    catch {\n+      alert(\"Oops, erro ao buscar\");\n+    }\n   }\n \n   return (\n     <div className=\"container\">\n"
+                },
+                {
+                    "date": 1639022459705,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -15,9 +15,9 @@\n     }\n \n     try{\n       const response = await api.get(`${input}/json`);\n-      console.log(response);\n+      console.log(response.data);\n     } \n \n     catch {\n       alert(\"Oops, erro ao buscar\");\n"
+                },
+                {
+                    "date": 1639022522466,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -20,8 +20,9 @@\n     } \n \n     catch {\n       alert(\"Oops, erro ao buscar\");\n+      setInput('');\n     }\n   }\n \n   return (\n"
+                },
+                {
+                    "date": 1639022617882,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -6,8 +6,9 @@\n \n function App() {\n \n   const [input, setInput] = useState('');\n+  const [cep, setCep] = useState({})\n \n   async function handleSearch(){\n     if(input === \"\" ){\n       alert(\"Preencha algum CEP!\");\n@@ -16,8 +17,10 @@\n \n     try{\n       const response = await api.get(`${input}/json`);\n       console.log(response.data);\n+      setCep(response.data);\n+      setInput('');\n     } \n \n     catch {\n       alert(\"Oops, erro ao buscar\");\n"
+                },
+                {
+                    "date": 1639022708125,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -50,9 +50,9 @@\n \n         <span>Rua Ipê Roxo</span>\n         <span>Complemento: Muro cor de açaí</span>\n         <span>Raimundo Marinho</span>\n-        <span>Penedo - AL</span>\n+        <span>{cep.localidade} - {cep.uf}</span>\n         <span>{input}</span>\n       </main>\n     </div>\n   );\n"
+                },
+                {
+                    "date": 1639022747847,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -45,9 +45,9 @@\n         </button>\n       </div>\n \n       <main className=\"main\">\n-        <h2>CEP: 57200000</h2>\n+        <h2>CEP: {cep.cep}</h2>\n \n         <span>Rua Ipê Roxo</span>\n         <span>Complemento: Muro cor de açaí</span>\n         <span>Raimundo Marinho</span>\n"
+                },
+                {
+                    "date": 1639022781352,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,9 +47,9 @@\n \n       <main className=\"main\">\n         <h2>CEP: {cep.cep}</h2>\n \n-        <span>Rua Ipê Roxo</span>\n+        <span>Rua {cep.logradouro}</span>\n         <span>Complemento: Muro cor de açaí</span>\n         <span>Raimundo Marinho</span>\n         <span>{cep.localidade} - {cep.uf}</span>\n         <span>{input}</span>\n"
+                },
+                {
+                    "date": 1639022836771,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -47,11 +47,11 @@\n \n       <main className=\"main\">\n         <h2>CEP: {cep.cep}</h2>\n \n-        <span>Rua {cep.logradouro}</span>\n-        <span>Complemento: Muro cor de açaí</span>\n-        <span>Raimundo Marinho</span>\n+        <span>Rua: {cep.logradouro}</span>\n+        <span>Complemento: {cep.complemento}</span>\n+        <span>{cep.bairro}</span>\n         <span>{cep.localidade} - {cep.uf}</span>\n         <span>{input}</span>\n       </main>\n     </div>\n"
+                },
+                {
+                    "date": 1639022846702,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -49,9 +49,9 @@\n         <h2>CEP: {cep.cep}</h2>\n \n         <span>Rua: {cep.logradouro}</span>\n         <span>Complemento: {cep.complemento}</span>\n-        <span>{cep.bairro}</span>\n+        <span>Bairro: {cep.bairro}</span>\n         <span>{cep.localidade} - {cep.uf}</span>\n         <span>{input}</span>\n       </main>\n     </div>\n"
+                },
+                {
+                    "date": 1639022855431,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -51,9 +51,8 @@\n         <span>Rua: {cep.logradouro}</span>\n         <span>Complemento: {cep.complemento}</span>\n         <span>Bairro: {cep.bairro}</span>\n         <span>{cep.localidade} - {cep.uf}</span>\n-        <span>{input}</span>\n       </main>\n     </div>\n   );\n }\n"
+                },
+                {
+                    "date": 1639022998772,
+                    "content": "Index: \n===================================================================\n--- \n+++ \n@@ -44,16 +44,19 @@\n           <FiSearch size={25} color=\"#fff\" />\n         </button>\n       </div>\n \n-      <main className=\"main\">\n-        <h2>CEP: {cep.cep}</h2>\n+      {Object.keys(cep).length > 0 && (\n+        <main className=\"main\">\n+          <h2>CEP: {cep.cep}</h2>\n \n-        <span>Rua: {cep.logradouro}</span>\n-        <span>Complemento: {cep.complemento}</span>\n-        <span>Bairro: {cep.bairro}</span>\n-        <span>{cep.localidade} - {cep.uf}</span>\n-      </main>\n+          <span>Rua: {cep.logradouro}</span>\n+          <span>Complemento: {cep.complemento}</span>\n+          <span>Bairro: {cep.bairro}</span>\n+          <span>{cep.localidade} - {cep.uf}</span>\n+        </main>\n+      )}\n+      \n     </div>\n   );\n }\n \n"
+                }
+            ],
+            "date": 1639017418016,
+            "name": "Commit-0",
+            "content": "function App() {\n  return (\n    <div className=\"App\">\n      <h1>Olá mundo</h1>\n      </header>\n    </div>\n  );\n}\n\nexport default App;\n"
+        }
+    ]
+}
